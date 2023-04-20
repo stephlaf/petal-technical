@@ -2,6 +2,7 @@ class Api::V1::PokemonsController < Api::V1::BaseController
   before_action :set_pokemon, only: [:show, :update, :destroy ]
   def index
     @pokemons = Pokemon.all
+    paginate json: @pokemons
   end
 
   def show
