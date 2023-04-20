@@ -7,11 +7,11 @@
 ```
 git clone git@github.com:stephlaf/pokemon-api.git
 ```
-- Run
+- Install the gems
 ```
 bundle install
 ```
-- Run
+- Create the DB & seed
 ```
 rails db:create db:migrate db:seed
 ```
