@@ -1,6 +1,6 @@
 # README
 
-### Rails 7 API providing access to the CRUD actions on a Psql database of Pokemons
+### Rails 7 API providing access to the CRUD actions on a Postgresql database of Pokemons
 
 ### Usage:
 - Clone the repo

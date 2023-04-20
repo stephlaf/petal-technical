@@ -1,5 +1,5 @@
 class Api::V1::PokemonsController < Api::V1::BaseController
-  before_action :set_pokemon, only: [:show, :update, :destroy ]
+  before_action :set_pokemon, only: [ :show, :update, :destroy ]
 
   # All:
   # GET http://localhost:3000/api/v1/pokemons
@@ -8,9 +8,8 @@ class Api::V1::PokemonsController < Api::V1::BaseController
   # GET http://localhost:3000/api/v1/pokemons?per_page=50&page=2
   def index
     @pokemons = Pokemon.all
-    paginate json: @pokemons
+    paginate json: @pokemons if params[:page].present?
   end
-
 
   # GET http://localhost:3000/api/v1/pokemons/:id
   def show
