@@ -66,3 +66,5 @@ http://localhost:3000/api/v1/pokemons/:id
 ```
 - The `will_paginate` and `api-pagination` gems are used for the pagination
 - The `jbuilder` gem is used to generate the `json` views
+
+- There are unit tests you may run with `rails test`
