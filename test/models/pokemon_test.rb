@@ -7,13 +7,13 @@ class PokemonTest < ActiveSupport::TestCase
   end
 
   test "A Pokemon name should be unique" do
-    Pokemon.create!(name: 'Escargot')
-    invalid_pokemon = Pokemon.new(name: 'Escargot')
+    Pokemon.create!(name: 'Escargot', legendary: true)
+    invalid_pokemon = Pokemon.new(name: 'Escargot', legendary: true)
     assert_not invalid_pokemon.save
   end
 
-  test "A Pokemon name should be at least 4 characters long" do
-    pokemon = Pokemon.new(name: 'Bob')
-    assert_not pokemon.save, "The name #{pokemon.name} is too short, it should be at least 4 characters long"
+  test "A Pokemon name should be at least 3 characters long" do
+    pokemon = Pokemon.new(name: 'Bo', legendary: false)
+    assert_not pokemon.save, "The name #{pokemon.name} is too short, it should be at least 3 characters long"
   end
 end

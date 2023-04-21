@@ -14,8 +14,8 @@ CSV.foreach(csv_filepath, headers: :first_row, header_converters: :symbol) do |r
   row[:sp_def] = row[:sp_def].to_i
   row[:speed] = row[:speed].to_i
   row[:generation] = row[:generation].to_i
-  row[:legendary] = row[:legendary] == 'true'
-  # p row
+  row[:legendary] = row[:legendary] == 'True' || row[:legendary] == 'true'
+
   pokemon = Pokemon.create!(row)
   puts "Pokemon with ID #{pokemon.id} was created"
 end
