@@ -34,6 +34,8 @@ http://localhost:3000/api/v1/pokemons/:id
 ```
 http://localhost:3000/api/v1/pokemons
 ```
+
+You will need to specify
 - UPDATE `PATCH`
 ```
 http://localhost:3000/api/v1/pokemons/:id
@@ -44,5 +46,23 @@ http://localhost:3000/api/v1/pokemons/:id
 ```
 
 ### Notes:
+- For the `CREATE` and the `UPDATE` actions, you must provide a Hash through the `body` of the request, with these specific keys:
+```ruby
+{
+	"po_id": Integer,
+	"name": String,
+	"type_1": String,
+	"type_2": String,
+	"total": Integer,
+	"hp": Integer,
+	"attack": Integer,
+	"defense": Integer,
+	"sp_atk": Integer,
+	"sp_def": Integer,
+	"speed": Integer,
+	"generation": Integer,
+	"legendary": Boolean
+}
+```
 - The `will_paginate` and `api-pagination` gems are used for the pagination
 - The `jbuilder` gem is used to generate the `json` views
