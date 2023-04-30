@@ -13,6 +13,5 @@ json.array! @pokemons do |pokemon|
     :sp_def,
     :speed,
     :generation,
-    :legendary,
     :legendary
-end
+  end
