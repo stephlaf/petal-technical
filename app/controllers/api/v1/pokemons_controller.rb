@@ -7,7 +7,7 @@ class Api::V1::PokemonsController < Api::V1::BaseController
   # Paginated:
   # GET http://localhost:3000/api/v1/pokemons?per_page=50&page=2
   def index
-    @pokemons = Pokemon.all
+    @pokemons = Pokemon.order(id: :asc)
     paginate json: @pokemons if params[:page].present?
   end
 
